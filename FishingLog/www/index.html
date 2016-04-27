@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <!--
+        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
+        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <title>FishingLog</title>
+
+    <!-- FishingLog references -->
+    <link href="css/index.css" rel="stylesheet" />
+    <script src="scripts/jquery-2.2.3.min.js"></script>
+    <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <script href="scripts/geoLocation.js" rel=""></script>
+
+</head>
+<body>
+    <div data-role="content">
+        <!--TODO Change form action-->
+        <form action="../thankyou.html" method="post" name="submitReport" class="reportForms">
+            <p class="title">Create Report</p>
+
+            <select id="countySelector"></select>
+
+            <select id="lakeSelector" onFocus="secondMenuExec()"></select>
+
+            <select name="species" multiple>
+                <option value="">Species</option>
+                <option value="LMB">Largemouth Bass</option>
+                <option value="SMB">Smallmouth Bass</option>
+                <option value="Eye">Walleye</option>
+                <option value="Perch">Perch</option>
+                <option value="Muskie">Tiger Muskie</option>
+                <option value="Pike">Pike</option>
+                <option value="Crappie">Crappie</option>
+                <option value="Blue">Blue Gill</option>
+                <option value="Bow">Rainbow Trout</option>
+                <option value="Cutty">Cutthroat</option>
+                <option value="Brown">Brown Trout</option>
+                <option value="Laker">Lake Trout</option>
+                <option value="Brookie">Brook Trout</option>
+                <option value="Tiger">Tiger Trout</option>
+            </select>
+
+            <div data-role="fieldcontain">
+                <input type="date" name="date" id="date" value="" />
+            </div>
+
+            <select name="tod" id="tod">
+                <option value="">Time of Day</option>
+                <option value="Morning">Morning</option>
+                <option value="Afternoon">Afternoon</option>
+                <option value="Evening">Evening</option>
+                <option value="Night">Night</option>
+                <option value="Day">All Day</option>
+                <option value="AllNight">All Night</option>
+            </select>
+
+            <select name="lure" id="lure" >
+                <option value="">Lure</option>
+                <option value="sb">Spinner Bait</option>
+                <option value="jig">Jig</option>
+                <option value="plastic">Plastic</option>
+                <option value="crankbait">Crank Bait</option>
+                <option value="surfacebait">Surface Bait</option>
+                <option value="spoon">Spoon</option>
+            </select>
+
+            <select name="weather">
+                <option value="">Weather</option>
+                <option value="Overcast">Overcast</option>
+                <option value="PartlyCloudy">Partly Cloudy</option>
+                <option value="MostlyClear">Mostly Clear</option>
+                <option value="Clear">Clear</option>
+            </select>
+
+            <input type="text" name="airTemp" value="Air Temp">
+
+            <input type="text" name="waterTemp" value="Water Temp">
+
+            <input type="text" name="waterDepth" value="Water Depth">
+
+            <select name="waterColor">
+                <option value="">Water Color</option>
+                <option value="Clear">Clear</option>
+                <option value="Stained">Stained</option>
+                <option value="Dark">Dark</option>
+                <option value="Muddy">Muddy</option>
+            </select>
+
+            <label name=>GPS: </label>
+            <span id="geolocation"></span>
+
+            <textarea name="notes" cols="50" rows="5" value="Notes"></textarea>
+  
+            <p><input name="Submit" type="submit" value="Submit" /></p>
+        </form>
+    </div>
+
+    <h4>Footer</h4>
+
+    <!-- Cordova reference, this is added to your app when it's built. -->
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+
+    <script src="scripts/index.js"></script>
+</body>
+</html>
